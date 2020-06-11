@@ -1,0 +1,38 @@
+
+
+1. Get Project to build.
+	When opening project there was an error. I searched the error on Google on how to resolve.
+	a. Visual Studio Command Prompt: gacutil -i "C:\Users\student\Documents\Visual Studio 2017\SETWorks\SetWorksProject\SetWorksProject\bin\Telerik.Web.UI.dll"
+
+References: https://www.telerik.com/forums/could-not-load-file-or-assembly-'telerik-web-ui-etc
+
+	b. Renamed RadComboBoxx to RadComboBox
+
+2. Add 'Yellow' to table. Added:                                                        
+	a. <telerik:RadComboBoxItem runat="server" Text="Yellow" Value="Yellow" />
+	b. <telerik:RadComboBoxItem runat="server" Text="Yellow" Value="Yellow" />
+	c.  else if (item.Value == "Yellow")
+            {
+                ColorString.Append("Yellow");
+            }
+
+3. Fixed the firstname populating in both the firstname and lastname fields
+	a. Renamed FirstName to LastName in the insert statement.
+('" + FirstName + "','" + LastName + "','" + Chocolate + "','" + PreferredColors + "')";
+
+4. Bug (Enhancement): The table is not ordered alphabetically. Please sort the list alphabetically by lastname.
+ %>" SelectCommand="SELECT [Id], [FirstName], [LastName], [Chocolate], [PreferredColors] FROM [PatientInfo]   ORDER BY [LastName]"
+-----------------------------------------------------------------------------------
+EXTRA CREDIT
+-----------------------------------------------------------------------------------
+Added space in between FirstName and LastName 
+HeaderText="First Name"
+HeaderText="Last Name"
+
+Added the ability to edit items
+a. AutoGenerateEditColumn="True"
+b. Added: <EditItemTemplate> for each coloumn                        
+<EditItemTemplate>
+<asp:CheckBox ID="CheckBox1" runat="server" Skin="Black" />                       
+</EditItemTemplate>
+
